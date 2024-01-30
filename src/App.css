@@ -1,0 +1,66 @@
+/* src/App.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.nav-link {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+/* Add additional styles as needed */
+
+
+/* src/components/Footer.css */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.left-content {
+  max-width: 60%;
+}
+
+.right-content {
+  display: flex;
+  gap: 20px;
+}
+
+.right-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.right-content a:hover {
+  text-decoration: underline;
+}
+
