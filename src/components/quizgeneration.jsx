@@ -38,7 +38,7 @@ const QuizGeneration = () => {
       const questions = JSON.stringify(data.content)
       console.log(questions)
       localStorage.setItem('content', JSON.stringify(data.content))
-      // window.location.href = '/quiz'
+      window.location.href = '/quiz'
 
 
     })
