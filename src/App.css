@@ -28,7 +28,16 @@
   color: white;
 }
 
+
+
 /* Add additional styles as needed */
+
+#logocenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 /* src/components/Footer.css */
@@ -63,4 +72,3 @@ footer {
 .right-content a:hover {
   text-decoration: underline;
 }
-
