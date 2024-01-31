@@ -20,16 +20,18 @@ export default function Quiz() {
         }
     }
 
-    // const checkAnswer = (event) => {
-    //     event.preventDefault()
-    //     fetch('http://localhost:6747/grade', {
-	//         method: 'POST',
-    //         }).then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //         })
+    const checkAnswer = (event) => {
+        event.preventDefault()
+        const question = filteredQuestions[currentQuestion]
+        const answer = document.querySelector('input').value
+        fetch(`http://localhost:6747/grade?question=${question}&answer=${answer}`, {
+	        method: 'POST',
+            }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
         
-    // }
+    }
     
 
   return (
@@ -44,7 +46,7 @@ export default function Quiz() {
       })}
 
       <input type="text" placeholder='Answer'/>
-      {/* <button onClick={checkAnswer}>submit</button> */}
+      <button onClick={checkAnswer}>submit</button>
 
       <button onClick={updateQuestion}>Next</button>
     </div>
