@@ -1,5 +1,6 @@
 // src/components/QuizGeneration.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const QuizGeneration = () => {
   const [formData, setFormData] = useState({
@@ -22,18 +23,37 @@ const QuizGeneration = () => {
     setUserAnswers(updatedAnswers);
   };
 
-  const generateQuiz = () => {
-    const questions = Array.from({ length: formData.numQuestions }, (_, index) => `Question ${index + 1}`);
-    
-    const generatedQuiz = {
-      title: `${formData.topic} Quiz`,
-      description: `Test your knowledge on ${formData.topic} with ${formData.numQuestions} questions.`,
-      answers: Array.from({ length: formData.numQuestions }, (_, index) => `Answer ${index + 1}`),
-      questions,
-    };
+  const generateQuiz = async (event) => {
+    event.preventDefault();
+    // window.location.href = '/quiz'
+    console.log('formData', formData);
 
-    setQuiz(generatedQuiz);
-    setShowResult(false);
+    const respose = await fetch(`http://localhost:6747/ask?length=${formData.numQuestions}&topic=${formData.topic}&expertise=${formData.expertise}&style=${formData.style}`, {
+      method: 'POST'
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('Creating Quiz...')
+      localStorage.clear()
+      const questions = JSON.stringify(data.content)
+      console.log(questions)
+      localStorage.setItem('content', JSON.stringify(data.content))
+      // window.location.href = '/quiz'
+
+
+    })
+
+    // const questions = Array.from({ length: formData.numQuestions }, (_, index) => `Question ${index + 1}`);
+    
+    // const generatedQuiz = {
+    //   title: `${formData.topic} Quiz`,
+    //   description: `Test your knowledge on ${formData.topic} with ${formData.numQuestions} questions.`,
+    //   answers: Array.from({ length: formData.numQuestions }, (_, index) => `Answer ${index + 1}`),
+    //   questions,
+    // };
+    
+    // setQuiz(generatedQuiz);
+    // setShowResult(false);
   };
 
   const handleSubmit = (e) => {
@@ -102,7 +122,7 @@ const QuizGeneration = () => {
           </label><br />
           <label>Style of Questions:
             <select name="style" onChange={(e) => setFormData({ ...formData, style: e.target.value })} value={formData.style}>
-              {['normal', '1940’s gangster', 'like im an 8 year old', 'master oogway', 'jedi', 'captain jack sparrow', 'matthew mcconaughey'].map((style) => (
+              {['normal', "1940's gangster", 'like im an 8 year old', 'master oogway', 'jedi', 'captain jack sparrow', 'matthew mcconaughey'].map((style) => (
                 <option key={style} value={style}>{style}</option>
               ))}
             </select>

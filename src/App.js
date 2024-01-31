@@ -7,6 +7,7 @@ import Home from './components/home';
 import Account from './components/accountpage';
 import QuizGeneration from './components/quizgeneration';
 import Footer from './components/footer';
+import Quiz from './components/quiz';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/account" element={<Account />} />
           <Route path="/quiz-generation" element={<QuizGeneration />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
         <Footer />
       </div>
