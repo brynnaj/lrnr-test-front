@@ -1,12 +1,12 @@
-import React from 'react'
-import { useState } from 'react'
+// import React from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0)
 
     const [grade, setGrade] = useState('')
 
-    
+   
 
     // console.log(localStorage)
     const questions = JSON.parse(localStorage.getItem('content'))
@@ -14,6 +14,7 @@ export default function Quiz() {
 
     const updateQuestion = (event) => {
         event.preventDefault()
+        setGrade('')
         if (currentQuestion < filteredQuestions.length - 1) {
             setCurrentQuestion(currentQuestion + 1)
         } else if (currentQuestion === filteredQuestions.length - 1) {
@@ -32,10 +33,12 @@ export default function Quiz() {
             .then(data => {
                 console.log(data.content)
                 setGrade(data.content)
+                
             })
         
     }
-    
+
+
 
   return (
     <div>
@@ -51,9 +54,11 @@ export default function Quiz() {
       <input type="text" placeholder='Answer'/>
       <button onClick={checkAnswer}>submit</button>
 
-      <button onClick={updateQuestion}>Next</button>
+     
 
-      {grade}
+      {grade} 
+      {grade &&  <button onClick={updateQuestion}>Next</button>}
+
     </div>
   )
 }
