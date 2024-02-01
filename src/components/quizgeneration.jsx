@@ -40,7 +40,6 @@ const QuizGeneration = () => {
       localStorage.setItem('content', JSON.stringify(data.content))
       window.location.href = '/quiz'
 
-
     })
 
     // const questions = Array.from({ length: formData.numQuestions }, (_, index) => `Question ${index + 1}`);
@@ -101,7 +100,7 @@ const QuizGeneration = () => {
         <form onSubmit={generateQuiz}>
           <label>Topic:
             <select name="topic" onChange={(e) => setFormData({ ...formData, topic: e.target.value })} value={formData.topic}>
-              {['golang', 'aws', 'javascript', 'CI/CD', 'home gardens', 'coffee', 'finger foods'].map((topic) => (
+              {['golang', 'aws', 'javascript', 'CI/CD', 'home gardens', 'coffee', 'finger foods', 'animals'].map((topic) => (
                 <option key={topic} value={topic}>{topic}</option>
               ))}
             </select>
