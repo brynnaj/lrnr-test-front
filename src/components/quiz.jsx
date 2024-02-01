@@ -21,6 +21,7 @@ export default function Quiz() {
             setCurrentQuestion(0)
             // window.location.href = '/result'
         }
+        document.querySelector('input').value = ''
     }
 
     const checkAnswer = (event) => {
