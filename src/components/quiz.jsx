@@ -4,6 +4,8 @@ import { useState } from 'react'
 export default function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0)
 
+    const [grade, setGrade] = useState('')
+
     
 
     // console.log(localStorage)
@@ -28,7 +30,8 @@ export default function Quiz() {
 	        method: 'POST',
             }).then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log(data.content)
+                setGrade(data.content)
             })
         
     }
@@ -38,7 +41,7 @@ export default function Quiz() {
     <div>
       {filteredQuestions.map((question, index) => {
             if (index === currentQuestion) {
-                return <div>
+                return <div key={`question-${index}`}>
                     <p>{currentQuestion+1}/{filteredQuestions.length}</p>
                     <h1>{question}</h1>
                     </div>
@@ -49,6 +52,8 @@ export default function Quiz() {
       <button onClick={checkAnswer}>submit</button>
 
       <button onClick={updateQuestion}>Next</button>
+
+      {grade}
     </div>
   )
 }
