@@ -12,7 +12,6 @@ function Error() {
                     <h1 className="mt-5">404 Not Found!</h1>
                     <img src={alertCircle} alt="Alert Icon" style={{ maxWidth: '20%', maxHeight: '20%' }} />
                     <p className="lead">Oops! The page you're looking for doesn't exist.</p>
-                    <p>If you're sure it should, search for what you need or start again from the home page.</p>
                     <Link to="/" className="btn btn-primary">Go Home</Link>
                 </div>
             </div>
