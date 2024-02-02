@@ -25,7 +25,7 @@ const Home = () => {
             <p class="h5 col-12">Your guided path to programming enlightenment</p>
         </div>
         <div class="row text-center">
-            <button class="btn btn-primary btn-sm" onclick="login()">Begin Journey</button>
+            <Link to="/quiz-generation" className="btn btn-primary btn-sm" onclick="login()">Begin Journey</Link>
         </div>
     </div>
 </div>
