@@ -1,6 +1,7 @@
 // src/components/QuizGeneration.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../qg.css'
 
 const QuizGeneration = () => {
   const [formData, setFormData] = useState({
@@ -73,7 +74,7 @@ const QuizGeneration = () => {
 
   return (
     <div>
-      <h2>{quiz ? quiz.title : 'Quiz Generation Page'}</h2>
+      <h2 className='Qgpage'>{quiz ? quiz.title : 'Quiz Generation'}</h2>
       {quiz && currentQuestionIndex < formData.numQuestions ? (
         <div>
           <p>{quiz.questions[currentQuestionIndex]}</p>
@@ -97,7 +98,7 @@ const QuizGeneration = () => {
           )}
         </div>
       ) : (
-        <form onSubmit={generateQuiz}>
+        <form class ='bg-primary' onSubmit={generateQuiz}>
           <label>Topic:
             <select name="topic" onChange={(e) => setFormData({ ...formData, topic: e.target.value })} value={formData.topic}>
               {['golang', 'aws', 'javascript', 'CI/CD', 'home gardens', 'coffee', 'finger foods', 'animals'].map((topic) => (
@@ -126,7 +127,7 @@ const QuizGeneration = () => {
               ))}
             </select>
           </label><br />
-          <button type="submit">Generate Quiz</button>
+          <button class= 'bg-dark' type="submit">Generate Quiz</button>
         </form>
       )}
     </div>

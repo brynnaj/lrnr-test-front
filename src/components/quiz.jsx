@@ -1,5 +1,6 @@
 // import React from 'react'
 import { useState, useEffect } from 'react'
+import '../quiz.css'
 
 export default function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -42,7 +43,7 @@ export default function Quiz() {
 
 
   return (
-    <div>
+    <div className='quiz-box'>
       {filteredQuestions.map((question, index) => {
             if (index === currentQuestion) {
                 return <div key={`question-${index}`}>
@@ -53,12 +54,12 @@ export default function Quiz() {
       })}
 
       <input type="text" placeholder='Answer'/>
-      <button onClick={checkAnswer}>submit</button>
+      <button class="text-light bg-primary" onClick={checkAnswer}>Submit</button>
 
      
 
       {grade} 
-      {grade &&  <button onClick={updateQuestion}>Next</button>}
+      {grade &&  <button class="text-light bg-primary" onClick={updateQuestion}>Next</button>}
 
     </div>
   )
