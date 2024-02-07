@@ -2,7 +2,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
+import Lrnrnav from './components/navbar';
 import Home from './components/home';
 import Account from './components/accountpage';
 import QuizGeneration from './components/quizgeneration';
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar />
+        <Lrnrnav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/account" element={<Account />} />

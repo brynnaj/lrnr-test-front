@@ -1,5 +1,6 @@
 // src/components/QuizGeneration.js
 import React, { useState } from 'react';
+import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../qg.css'
 
@@ -98,37 +99,72 @@ const QuizGeneration = () => {
           )}
         </div>
       ) : (
-        <form class ='bg-primary' onSubmit={generateQuiz}>
-          <label>Topic:
-            <select name="topic" onChange={(e) => setFormData({ ...formData, topic: e.target.value })} value={formData.topic}>
-              {['golang', 'aws', 'javascript', 'CI/CD', 'home gardens', 'coffee', 'finger foods', 'animals'].map((topic) => (
-                <option key={topic} value={topic}>{topic}</option>
-              ))}
-            </select>
-          </label><br />
-          <label>Expertise:
-            <select name="expertise" onChange={(e) => setFormData({ ...formData, expertise: e.target.value })} value={formData.expertise}>
-              {['novice', 'intermediate', 'expert'].map((exp) => (
-                <option key={exp} value={exp}>{exp}</option>
-              ))}
-            </select>
-          </label><br />
-          <label>Number of Questions:
-            <select name="numQuestions" onChange={(e) => setFormData({ ...formData, numQuestions: parseInt(e.target.value) })} value={formData.numQuestions}>
-              {[5, 10, 15].map((num) => (
-                <option key={num} value={num}>{num}</option>
-              ))}
-            </select>
-          </label><br />
-          <label>Style of Questions:
-            <select name="style" onChange={(e) => setFormData({ ...formData, style: e.target.value })} value={formData.style}>
-              {['normal', "1940's gangster", 'like im an 8 year old', 'master oogway', 'jedi', 'captain jack sparrow', 'matthew mcconaughey'].map((style) => (
-                <option key={style} value={style}>{style}</option>
-              ))}
-            </select>
-          </label><br />
-          <button class= 'bg-dark' type="submit">Generate Quiz</button>
-        </form>
+        // <form class ='bg-primary' onSubmit={generateQuiz}>
+        //   <label>Topic:
+        //     <select name="topic" onChange={(e) => setFormData({ ...formData, topic: e.target.value })} value={formData.topic}>
+        //       {['golang', 'aws', 'javascript', 'CI/CD', 'home gardens', 'coffee', 'finger foods', 'animals'].map((topic) => (
+        //         <option key={topic} value={topic}>{topic}</option>
+        //       ))}
+        //     </select>
+        //   </label><br />
+        //   <label>Expertise:
+        //     <select name="expertise" onChange={(e) => setFormData({ ...formData, expertise: e.target.value })} value={formData.expertise}>
+        //       {['novice', 'intermediate', 'expert'].map((exp) => (
+        //         <option key={exp} value={exp}>{exp}</option>
+        //       ))}
+        //     </select>
+        //   </label><br />
+        //   <label>Number of Questions:
+        //     <select name="numQuestions" onChange={(e) => setFormData({ ...formData, numQuestions: parseInt(e.target.value) })} value={formData.numQuestions}>
+        //       {[5, 10, 15].map((num) => (
+        //         <option key={num} value={num}>{num}</option>
+        //       ))}
+        //     </select>
+        //   </label><br />
+        //   <label>Style of Questions:
+        //     <select name="style" onChange={(e) => setFormData({ ...formData, style: e.target.value })} value={formData.style}>
+        //       {['normal', "1940's gangster", 'like im an 8 year old', 'master oogway', 'jedi', 'captain jack sparrow', 'matthew mcconaughey'].map((style) => (
+        //         <option key={style} value={style}>{style}</option>
+        //       ))}
+        //     </select>
+        //   </label><br />
+        //   <button class= 'bg-dark' type="submit">Generate Quiz</button>
+        // </form>
+        <form className="bg-primary" onSubmit={generateQuiz}>
+        <label>Topic:
+          <Form.Select name="topic" onChange={(e) => setFormData({ ...formData, topic: e.target.value })} value={formData.topic}>
+            
+            {['golang', 'aws', 'javascript', 'CI/CD', 'home gardens', 'coffee', 'finger foods', 'animals'].map((topic) => (
+              <option key={topic} value={topic}>{topic}</option>
+            ))}
+          </Form.Select>
+        </label><br />
+        <label>Expertise:
+          <Form.Select name="expertise" onChange={(e) => setFormData({ ...formData, expertise: e.target.value })} value={formData.expertise}>
+            
+            {['novice', 'intermediate', 'expert'].map((exp) => (
+              <option key={exp} value={exp}>{exp}</option>
+            ))}
+          </Form.Select>
+        </label><br />
+        <label>Number of Questions:
+          <Form.Select name="numQuestions" onChange={(e) => setFormData({ ...formData, numQuestions: parseInt(e.target.value) })} value={formData.numQuestions}>
+            
+            {[5, 10, 15].map((num) => (
+              <option key={num} value={num}>{num}</option>
+            ))}
+          </Form.Select>
+        </label><br />
+        <label>Style of Questions:
+          <Form.Select  name="style" onChange={(e) => setFormData({ ...formData, style: e.target.value })} value={formData.style}>
+            
+            {['normal', "1940's gangster", 'like im an 8 year old', 'master oogway', 'jedi', 'captain jack sparrow', 'matthew mcconaughey'].map((style) => (
+              <option key={style} value={style}>{style}</option>
+            ))}
+          </Form.Select>
+        </label><br />
+        <button className="bg-dark" type="submit">Generate Quiz</button>
+      </form>
       )}
     </div>
   );
