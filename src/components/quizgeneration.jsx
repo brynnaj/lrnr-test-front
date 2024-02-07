@@ -75,7 +75,8 @@ const QuizGeneration = () => {
 
   return (
     <div>
-      <h2 className='Qgpage'>{quiz ? quiz.title : 'Quiz Generation'}</h2>
+      <h2 className='Qgpage'>{quiz ? quiz.title : 'Quiz Generation Options'}</h2>
+      <p className='Qgpage'>Please choose your preferences below to generate your personalized quiz</p>
       {quiz && currentQuestionIndex < formData.numQuestions ? (
         <div>
           <p>{quiz.questions[currentQuestionIndex]}</p>

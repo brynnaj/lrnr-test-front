@@ -1,4 +1,27 @@
 /* src/App.css */
+
+
+.card-hover-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.05); /* Adjust scale value as needed */
+}
+
+.how-it-works-section {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 40px; 
+  padding: 8%;
+}
+
+
+
+
+
+/* Add additional styles as needed */
+
 #logocenter {
   display: flex;
   justify-content: center;
@@ -7,42 +30,14 @@
 
 
 
-/* src/components/Footer.css */
-/* footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #333;
-  color: #fff;
-  font-size: 14px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-} */
-
-.left-content {
-  max-width: 60%;
-}
-
-.right-content {
-  display: flex;
-  gap: 20px;
-}
-
-.right-content a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.right-content a:hover {
-  text-decoration: underline;
-}
 
 
 
 
+
+
+
+/* Media queries */
 @media (min-width: 760px) {
   .footfoot {
     position: fixed;
