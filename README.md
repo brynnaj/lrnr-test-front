@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installing Packages
+run "npm i" in the terminal to install neccessary packages and dependencies
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -13,4 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+
+##
 
