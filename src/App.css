@@ -28,6 +28,23 @@
   color: white;
 }
 
+.card-hover-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.05); /* Adjust scale value as needed */
+}
+
+.how-it-works-section {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 40px; 
+  padding: 8%;
+}
+
+
+
 
 
 /* Add additional styles as needed */
