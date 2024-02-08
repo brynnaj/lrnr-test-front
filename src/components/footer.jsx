@@ -13,13 +13,13 @@ const Footer = () => {
         <Container className="d-flex flex-column mb-3 justify-content-center">
           <Nav activeKey="/home">
             <Nav.Item className="p-2" >
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link className="text-light" href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item className="p-2" >
-              <Nav.Link href="/account">Account</Nav.Link>
+              <Nav.Link className="text-light"  href="/account">Account</Nav.Link>
             </Nav.Item>
-            <Nav.Item className="p-2">
-              <Nav.Link href="/quiz-generation">Quiz Generation</Nav.Link>
+            <Nav.Item  className="p-2">
+              <Nav.Link className="text-light"  href="/quiz-generation">Quiz Generation</Nav.Link>
             </Nav.Item>
           </Nav>
           <p className="p-2 text-light">Embrace the power of our app and unlock the secrets of the universe, one quiz at a time. As I always say, 'Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.'</p>

@@ -28,9 +28,18 @@
   align-items: center;
 }
 
+.footfoot {
+  bottom: 0;
+  width: 100%;
+  margin-top: 80px;
+}
 
 
+.footfoot{
+  z-index: 1;
+  padding-top: 17rem;
 
+}
 
 
 
@@ -38,10 +47,10 @@
 
 
 /* Media queries */
-@media (min-width: 760px) {
+@media (max-width: 760px) {
   .footfoot {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+   padding-top: 17%;
+    
   }
 }
+
