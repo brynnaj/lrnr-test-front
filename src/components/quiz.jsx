@@ -6,6 +6,7 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const [grade, setGrade] = useState("");
+  const [submitValidation, setSubmitValidation] = useState('')
 
   // console.log(localStorage)
   const questions = JSON.parse(localStorage.getItem("content"));
@@ -15,6 +16,7 @@ export default function Quiz() {
   const updateQuestion = (event) => {
     event.preventDefault();
     setGrade("");
+    setSubmitValidation('')
     if (currentQuestion < filteredQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else if (currentQuestion === filteredQuestions.length - 1) {
@@ -28,7 +30,13 @@ export default function Quiz() {
     event.preventDefault();
     const question = filteredQuestions[currentQuestion];
     const answer = document.querySelector("input").value;
-    fetch(`http://localhost:6747/grade?question=${question}&answer=${answer}`, {
+
+    if (answer === '') {
+      setSubmitValidation('Oops! Please make sure to enter a response!') 
+      setGrade('')
+    } else if (answer !== ''){
+      setSubmitValidation('')
+      fetch(`http://localhost:6747/grade?question=${question}&answer=${answer}`, {
       method: "POST",
     })
       .then((res) => res.json())
@@ -36,6 +44,8 @@ export default function Quiz() {
         console.log(data.content);
         setGrade(data.content);
       });
+    }
+    
   };
 
   return (
@@ -57,7 +67,7 @@ export default function Quiz() {
       <button class="text-light bg-primary" onClick={checkAnswer}>
         Submit
       </button>
-
+      {submitValidation}
       {grade}
       {grade && (
         <button class="text-light bg-primary" onClick={updateQuestion}>
