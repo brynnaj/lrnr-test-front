@@ -21,7 +21,7 @@ export default function Quiz() {
       setCurrentQuestion(currentQuestion + 1);
     } else if (currentQuestion === filteredQuestions.length - 1) {
       setCurrentQuestion(0);
-      window.location.href = "/result";
+      window.location.href = "/results";
     }
     document.querySelector("input").value = "";
   };
