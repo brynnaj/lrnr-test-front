@@ -21,7 +21,7 @@ export default function Quiz() {
       setCurrentQuestion(currentQuestion + 1);
     } else if (currentQuestion === filteredQuestions.length - 1) {
       setCurrentQuestion(0);
-      window.location.href = "/result";
+      window.location.href = "/results";
     }
     document.querySelector("input").value = "";
   };
@@ -68,12 +68,17 @@ export default function Quiz() {
         Submit
       </button>
       {submitValidation}
-      {grade}
       {grade && (
-        <button class="text-light bg-primary" onClick={updateQuestion}>
-          Next
-        </button>
-      )}
+      <div>
+        <p>{grade.startsWith("no") ? "Incorrect" : "Correct"}</p>
+        <p>{grade}</p>
+      </div>
+    )}
+    {grade && (
+      <button className="text-light bg-primary" onClick={updateQuestion}>
+        Next
+      </button>
+    )}
     </div>
   );
 }

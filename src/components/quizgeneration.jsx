@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import '../qg.css'
+import Loading from '../loadinglogo.png';
 
 const QuizGeneration = () => {
   const [formData, setFormData] = useState({
@@ -43,9 +44,12 @@ const QuizGeneration = () => {
         <p className='Qgpage'>Please choose your preferences below to generate your personalized quiz</p>
       </div>
       {loading ? (
-        <p>Loading...</p>
+        <div className='loading-text'>
+          <h3>Loading...</h3>
+          <img src= {Loading} alt='loading img' className='loadinglogo'></img>
+        </div>
       ) : (
-        <div>
+      <div>
           <form className="bg-primary" onSubmit={generateQuiz}>
             <label>
               Topic:
